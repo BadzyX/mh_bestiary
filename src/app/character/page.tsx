@@ -1,4 +1,5 @@
 export default function Character() {
+  // Type qu'on crée nous même
   type Character = {
     name: string;
     possesses?: boolean;
@@ -7,6 +8,7 @@ export default function Character() {
     dexterity?: number;
   };
 
+  // Tableau d'objets
   const characters: Character[] = [
     {
       name: "Hinoa",
@@ -27,6 +29,7 @@ export default function Character() {
     },
   ];
 
+  // Boucle de tous nos objets de notre tableau "characters"
   return characters.map((character: Character, index: number) => (
     <div key={index}>
       <p>Personnage: {character.name}</p>
