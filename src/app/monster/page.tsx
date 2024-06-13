@@ -1,34 +1,40 @@
 export default function Monster() {
   type Monster = {
     name: string;
-    map: string;
+    map: string[];
   };
 
-  const monster_1: Monster = {
-    name: "Rathalos",
-    map: "Forêt ancienne",
-  };
+  const monsters: Monster[] = [
+    {
+      name: "Rathalos",
+      map: ["Forêt ancienne"],
+    },
+    {
+      name: "Valstrax",
+      map: ["Cime oubliée"],
+    },
+    {
+      name: "Fatalis",
+      map: ["Château Schrade"],
+    },
+    {
+      name: "Gore Magala",
+      map: [
+        "Steppe ancestrale",
+        "Temple oublié",
+        "Bois éternel",
+        "Citadelle",
+        "Grand océan",
+      ],
+    },
+  ];
 
-  const monster_2: Monster = {
-    name: "Valstrax",
-    map: "Cime oubliée",
-  };
+  return monsters.map((monster: Monster, index: number) => (
+    <div key={index}>
+      <p>Monstre: {monster.name}</p>
+      <p>Habitat: {monster.map.join(" / ")}</p>
 
-  const monster_3: Monster = {
-    name: "Fatalis",
-    map: "Château Schrade",
-  };
-
-  return (
-    <>
-      <div>Monstre: {monster_1.name}</div>
-      <div>Habitat: {monster_1.map}</div>
       <br />
-      <div>Monstre: {monster_2.name}</div>
-      <div>Habitat: {monster_2.map}</div>
-      <br />
-      <div>Monstre: {monster_3.name}</div>
-      <div>Habitat: {monster_3.map}</div>
-    </>
-  );
+    </div>
+  ));
 }
