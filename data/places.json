@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Bernha",
+    "type": "village",
+    "generation": 4
+  },
+  {
+    "name": "Astera",
+    "type": "village",
+    "generation": 5
+  },
+  {
+    "name": "Seliana",
+    "type": "village",
+    "generation": 5
+  },
+  {
+    "name": "Kamura",
+    "type": "village",
+    "generation": 5
+  },
+  {
+    "name": "Val Habar",
+    "type": "city",
+    "generation": 4
+  }
+]
