@@ -1,3 +1,5 @@
+import { getFakeData } from "../../../../utils/getFakeData";
+
 export default function Character() {
   // Type qu'on crée nous même
   type Character = {
@@ -8,26 +10,8 @@ export default function Character() {
     dexterity?: number;
   };
 
-  // Tableau d'objets
-  const characters: Character[] = [
-    {
-      name: "Hinoa",
-      possesses: true,
-      weapons: ["Lance", "Arc"],
-      village: "Kamura",
-    },
-    {
-      name: "Minoto",
-      possesses: true,
-      weapons: ["Katana", "Corne de Chasse"],
-      village: "Kamura",
-    },
-    {
-      name: "Fugen",
-      weapons: ["Marteau", "Lames Doubles"],
-      village: "Kamura",
-    },
-  ];
+  // Tableau d'objets importé du fichier "characters.json"
+  const characters: Character[] = getFakeData("characters.json");
 
   // Boucle de tous nos objets de notre tableau "characters"
   return characters.map((character: Character, index: number) => (

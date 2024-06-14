@@ -1,3 +1,5 @@
+import { getFakeData } from "../../../../utils/getFakeData";
+
 export default function Map() {
   // Type qu'on crée nous même
   type Map = {
@@ -5,21 +7,8 @@ export default function Map() {
     type: string;
   };
 
-  // Tableau d'objets
-  const maps: Map[] = [
-    {
-      name: "Temple oublié",
-      type: "Forêt",
-    },
-    {
-      name: "Désert des Termites",
-      type: "Désert",
-    },
-    {
-      name: "Cavernes de Laves",
-      type: "Volcan",
-    },
-  ];
+  // Tableau d'objets importé du fichier "maps.json"
+  const maps: Map[] = getFakeData("maps.json");
 
   // Boucle de tous nos objets de notre tableau "maps"
   return maps.map((map: Map, index: number) => (

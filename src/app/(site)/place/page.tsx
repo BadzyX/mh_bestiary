@@ -1,3 +1,5 @@
+import { getFakeData } from "../../../../utils/getFakeData";
+
 export default function Place() {
   // Type qu'on crée nous même
   type Place = {
@@ -6,34 +8,8 @@ export default function Place() {
     generation: number;
   };
 
-  // Tableau d'objets
-  const places: Place[] = [
-    {
-      name: "Bernha",
-      type: "village",
-      generation: 4,
-    },
-    {
-      name: "Astera",
-      type: "village",
-      generation: 5,
-    },
-    {
-      name: "Seliana",
-      type: "village",
-      generation: 5,
-    },
-    {
-      name: "Kamura",
-      type: "village",
-      generation: 5,
-    },
-    {
-      name: "Val Habar",
-      type: "city",
-      generation: 4,
-    },
-  ];
+  // Tableau d'objets importé du fichier "places.json"
+  const places: Place[] = getFakeData("places.json");
 
   // Boucle de tous nos objets de notre tableau "places"
   return places.map((place: Place, index: number) => (
