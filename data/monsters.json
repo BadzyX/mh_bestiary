@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Rathalos",
+    "map": ["Forêt ancienne"]
+  },
+  {
+    "name": "Valstrax",
+    "map": ["Cime oubliée"]
+  },
+  {
+    "name": "Fatalis",
+    "map": ["Château Schrade"]
+  },
+  {
+    "name": "Gore Magala",
+    "map": [
+      "Steppe ancestrale",
+      "Temple oublié",
+      "Bois éternel",
+      "Citadelle",
+      "Grand océan"
+    ]
+  }
+]

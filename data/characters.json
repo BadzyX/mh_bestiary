@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Hinoa",
+    "possesses": true,
+    "weapons": ["Lance", "Arc"],
+    "village": "Kamura"
+  },
+  {
+    "name": "Minoto",
+    "possesses": true,
+    "weapons": ["Katana", "Corne de Chasse"],
+    "village": "Kamura"
+  },
+  {
+    "name": "Fugen",
+    "weapons": ["Marteau", "Lames Doubles"],
+    "village": "Kamura"
+  },
+  {
+    "name": "Fiorayne",
+    "weapons": [
+      "Grande épée",
+      "Épée longue",
+      "Lance",
+      "Volto-hache",
+      "Épée et Bouclier"
+    ],
+    "village": "Elgado"
+  }
+]
