@@ -1,12 +1,13 @@
+import Link from "next/link";
 import { getFakeData } from "../../../../utils/getFakeData";
 
-export default function Map() {
-  // Type qu'on crée nous même
-  type Map = {
-    name: string;
-    type: string;
-  };
+// Type qu'on crée nous même
+export type Map = {
+  name: string;
+  type: string;
+};
 
+export default function Map() {
   // Tableau d'objets importé du fichier "maps.json"
   const maps: Map[] = getFakeData("maps.json");
 
@@ -15,7 +16,11 @@ export default function Map() {
     <div key={index}>
       <p>Nom: {map.name}</p>
       <p>Type: {map.type}</p>
+      <Link href={`/map/${encodeURIComponent(map.name)}`}>
+        <i>Fiche de l'habitat</i>
+      </Link>
 
+      <br />
       <br />
     </div>
   ));
