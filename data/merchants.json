@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Kagero le Marchand",
+    "type": "classic",
+    "village": "Kamura",
+    "generation": 5
+  },
+  {
+    "name": "Rondine Marchande Maritine",
+    "type": "classic",
+    "village": "Kamura",
+    "generation": 5
+  },
+  {
+    "name": "Hamon le Forgeron",
+    "type": "blacksmith",
+    "village": "Kamura",
+    "generation": 5
+  },
+  {
+    "name": "Komitsu la Gourmande",
+    "type": "food",
+    "village": "Kamura",
+    "generation": 5
+  }
+]

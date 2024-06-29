@@ -1,32 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { fetchData } from "../../../../utils/fetchData";
+import type { Character } from "../page";
+import { fetchData } from "../../../../../utils/fetchData";
 
-// Type qu'on crée nous même
-export type Character = {
-  id: number;
-  name: string;
-  possesses?: boolean;
-  weapons: string[];
-  village: string;
-  dexterity?: number;
-};
-
-export default function Character() {
+export default function Character({ params }: { params: { id: number } }) {
   // Hook d'état qui permet de stocker des données définies
-  const [characters, setCharacters] = useState<Character[]>([]);
+  const [character, setCharacter] = useState<Character>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   // Fonction asynchrone qui permet de récupérer nos données depuis notre API
-  const getAllCharacters = async () => {
+  const getCharacter = async () => {
     try {
-      const data = await fetchData<Character[]>(
-        `${process.env.API_BASE_URL}/characters/getall`
+      const data = await fetchData<Character>(
+        `${process.env.API_BASE_URL}/characters/get/${params.id}`
       );
-      setCharacters(data);
+      setCharacter(data);
     } catch (err) {
       setError("Impossible de charger les données.");
     } finally {
@@ -36,7 +26,7 @@ export default function Character() {
 
   // Hook qui permet de récupérer les données dès le chargement de la page
   useEffect(() => {
-    getAllCharacters();
+    getCharacter();
   }, []);
 
   if (loading) {
@@ -47,19 +37,14 @@ export default function Character() {
     return <div>{error}</div>;
   }
 
-  // Boucle de tous nos objets de notre tableau "characters"
-  return characters.map((character: Character, index: number) => (
-    <div key={index}>
+  return character ? (
+    <div>
       <p>Personnage: {character.name}</p>
       <p>Possédé: {character.possesses ? "Oui" : "Non"}</p>
       <p>Arme(s): {character.weapons.join(" / ")}</p>
       <p>Village: {character.village}</p>
-      <Link href={`/character/${character.id}`}>
-        <i>Fiche du personnage</i>
-      </Link>
-
-      <br />
-      <br />
     </div>
-  ));
+  ) : (
+    <p>Ce personnage n'existe pas.</p>
+  );
 }
