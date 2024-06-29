@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "../components/Button";
 
 export default function Home() {
   return (
@@ -10,6 +11,10 @@ export default function Home() {
       <Link href={"map"}>Liste des Habitats</Link>
       <br />
       <Link href={"place"}>Liste des Lieux</Link>
+      <br />
+      <Link href={"merchant"}>Liste des Marchands</Link>
+      <br />
+      <Button label={"Hello World"} />
     </>
   );
 }
